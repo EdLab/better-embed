@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Embed Code Field
+Plugin Name: Better Embed
 Version: 1.0
 Plugin URI: http://wordpress.pressible.org/plugin-embed-code-field
 Description: Adds a field in which to paste embed codes. Built to be XSS safe. Adapted from the custom fields code of Steve Taylor (http://sltaylor.co.uk/blog/control-your-own-wordpress-custom-fields/).
@@ -9,18 +9,17 @@ Author URI: http://edlab.tc.columbia.edu
 */
 
 
-# hooks
+# functions
 
 add_action( 'admin_menu', 'createEmbedField' );
-add_action( 'save_post', 'saveEmbedField', 1, 2 );
-
-
-# functions
 
 function createEmbedField() {
 	if ( function_exists( 'add_meta_box' ) ) 
 		add_meta_box( 'embed-field', 'Embed Code (for featured media)', 'displayEmbedField', 'post', 'normal', 'high' );
 }
+
+
+add_action( 'save_post', 'saveEmbedField', 1, 2 );
 
 function displayEmbedField() {
 	global $post;
