@@ -41,14 +41,15 @@ function displayEmbedField() {
 		
 		?>
 		
-		<label for="_embed" class="screen-reader-text"><b>Paste Embed Code</b></label>
-		<textarea style="margin:0;height:4em;width:98%;color:#999;font-size:.8em;overflow:hidden" name="_embed" id="_embed" columns="40" rows="1"><?php print htmlspecialchars( get_post_meta( $post->ID, '_embed', true ) ); ?></textarea>
-		<p>
-			Paste <em>one</em> embed code from any service to be included with your post.
-			Broken, incomplete, or duplicate codes will be removed. Please note that
-			only <a href="http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F">services that support oEmbed</a> are allowed in the main content area. <a href="http://pressible.org/header/faq#Images">Learn
-			more</a> about embedding media.</p>
-	
+<label for="_embed" class="screen-reader-text"><b>Paste Embed Code</b></label>
+<textarea style="margin:0;height:4em;width:98%;color:#999;font-size:.8em;overflow:hidden" name="_embed" id="_embed" columns="40" rows="1"><?php print htmlspecialchars( get_post_meta( $post->ID, '_embed', true ) ); ?></textarea>
+<p>
+	Paste <em>one</em> embed code from any service to be included with your post.
+	Broken, incomplete, or duplicate codes will be removed. Please note that
+	only <a href="http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F">services that support oEmbed</a> are allowed in the main content area. <a href="http://pressible.org/header/faq#Images">Learn
+	more</a> about embedding media.
+</p>
+
 		<?php
 	}
 		
@@ -170,12 +171,7 @@ function embed_content($content){
 	return $content;
 }
 
-
 add_filter('the_content', 'embed_content');
-
-
-
-
 
 
 ?>
